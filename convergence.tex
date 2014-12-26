@@ -1,0 +1,83 @@
+
+
+\section{Convergence Model} \label{sec:mathmodel}
+Researchers have long argued that every social network has a tendency
+towards balanced states~\cite{Doreian:02}.  The next question of
+interest is if an imbalance rises, in what way will a social network
+change towards a new balance.  It is noted in social psychology
+literature that people are reluctant to make changes in relations as
+they tend to avoid the effort needed to make such changes. In a balanced
+triadic relation, participants are likely to do nothing and keep their
+pairwise relations as what they were. In an imbalanced triadic
+relation, participants are likely to make the smallest effort possible
+to regain triadic balance. We define the concept of relation cost as
+the effort one needs to take to accomplish a certain relation
+change. Our convergence model is established based on a unified
+assumption: every social network converges in a way that requires as
+little total change in relations as possible to reach a balanced
+state.
+
+With the concept of relation distance, we are able to express the
+structure of a social network by drawing it in the Euclidean
+space. The strength of each relation is expressed by the distance
+between their locations. Notice that every layout in the Euclidean
+space automatically satisfies the metric triangle inequality, and
+hence corresponds to a balanced state of the network.  For an
+imbalanced social network, it is not possible to draw it using its
+initial relation distances.  Hence, our convergence model produces a
+layout of the social network with minimum total relation cost from the
+original one.
+
+Let $G=(V,E)$ denote an arbitrary social network, and $G^{*}=(V,
+E^{*})$ denote a balanced state of $G$. Let $n*n$ matrix $X$ denote
+the layout of $G^{*}$, with each row vector $x_{i}$ denoting node
+$i$'s location in $m$-dimensional space. For each pair $(i,j)$,
+$\psi(i,j)$ denotes its relation distance in $G$, and $d_{i,j}(X)$
+denotes distance between $i$ and $j$ in $X$, i.e., its relation
+distance in $G^{*}$.  Given an edge $(i,j)\in E$, the
+relation cost on $(i,j)$ is given by:
+\[c_{i, j}(X)=w_{\psi(i,j)}*(d_{i,j}(X)-\psi{(i,j)})^2\]
+where the weight value is a function of the original distance. The
+weight function can take into account the difficulty of changing a
+relation. For example, it is generally easier to change a neutral
+relation than a positive or a negative relation that incorporate an
+initial bias. The study of optimal weights is beyond the scope of this
+paper. However, we consider three main classes of weights:
+\[
+ w_{\psi(i,j)}= \left\{ 
+  \begin{array}{l l}
+    w_{+} & \quad \text{if $\psi(i,j)$ is a positive edge}\\
+    w_{O} & \quad \text{if $\psi(i,j)$ is a neutral edge}\\
+    w_{-} & \quad \text{if $\psi(i,j)$ is a negative edge}\\
+  \end{array} \right.
+\]
+
+If $w_{O} << w_{+}$ and $w_{O} << w_{-}$, then neutral edges would
+have very little influence on the already established
+positive/negative relations.
+
+\begin{definition}
+Let $G=(V,E)$ be a social network where $E$ is a set of weighted
+edges. Its converged network $G^{*}=(V,E^{*})$ is given by layout
+matrix $X$ with $d_{i,j}(X)$ as the relation distance between every
+pair $(i,j)$, such that the total relation cost $\sigma(X)$ is
+minimized:
+\[\sigma(X)= \min_{X} \sum_{i<j \leq n}w_{\psi(i,j)}*(d_{i,j}(X)-\psi{(i,j)})^2\]
+\end{definition}
+
+The optimization of relation cost is in fact a Metric
+Multidimensional Scaling problem (MDS) by assigning nodes a location
+in metric space. The total cost function is called stress in MDS, and
+is often minimized through an optimization strategy called {\it stress
+  majorization} \cite {Gansner:05}. Stress majorization is an iterative
+method that guarantees monotonically decreasing stress in each
+iteration, and returns a locally minimum solution.  It is recognized
+as a principled technique in the field of graph drawing. The
+algorithm, however, requires $O(n^3)$ time and $O(n^{2})$ space. Due
+to its complexity, stress majorization is applicable on graphs with
+limited size. We are in the process of developing an approximation
+method for this problem as a result. In this paper, however, we will
+investigate the performance of the exact solution to stress
+majorization.
+
+
