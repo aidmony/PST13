@@ -16,12 +16,11 @@ also suggested that relationships of interest exist in varying
 degrees, and that their theory is built on the incomplete
 representation of strengths of relations~\cite{Cartwright:56}. Tie
 strength is a well-studied concept in social psychology. A person may
-have close friends as well as acquaintances, strong and weak ties,
-with different trust expectations. A strong tie may represent a deep
-trust relation spanning many constructs in high risk situations, while
-a weak tie may be trusted mainly for low risk situations or for
-specific constructs like providing private
-information~\cite{Granovetter:1973}.
+have close friends and acquaintances (strong/weak ties), with
+different trust expectations. A strong tie may represent a trust
+relation corresponding constructs relevant to high risk situations,
+while a weak tie may be trusted for low risk situations like providing
+private information~\cite{Granovetter:1973}.
 
 To model this distinction, we consider a scenario where relationships
 have varying strengths. A strong positive link represents a close
@@ -56,16 +55,14 @@ relations, $e_{1} \preceq e_{2}$ if $e_{1}$ is at most as negative as
 $e_{2}$ in terms of strengths; if $e_{1}, e_{2}$ are of different
 signs, $e_{1} \preceq e_{2}$ if $e_{1}$ is positive and $e_{2}$ is
 negative. In the simplest case where we have only positive and
-negative relations, we have that $+ \preceq -$. To simplify the
-discussion, we will generally say that whenever $e_{1} \preceq e_{2}$,
-$e_1$ is stronger than $e_2$.
+negative relations, we have that $+ \preceq -$. 
  
 We also consider a {\bf neutral relationship} as one that is unbiased,
 which will be denoted as $O$. Basically a neutral relationship is a
 non-negative and non-positive relationship, corresponding to no
-opinion and no bias. In extending WSBT, two types of triads with
-neutral relations can be considered balanced: ``$+, +, O$",
-``$+,-,O$"~\cite{Cartwright:56}. With the introduction of neutral
+opinion and no bias. In the case of incomplete networks,  classic balance theory implicitly considered two types of triads with
+neutral relations balanced: ``$+, +, O$",
+``$+,-,O$"~\cite{kleinberg-book}. With the introduction of neutral
 relations, $E$ can be partitioned into three subsets: positive
 relationships $P$, negative relations $N$ and neutral relations
 $O$. Following the definition of ordering $\preceq$, it is clear that
@@ -83,16 +80,16 @@ its relations cause influence over the third one.  Such an influence
 will limit the range of comfortable relations of the third relation in
 a balanced state; and if it goes out of range, tension occurs and
 participants will suffer from {\bf stress}. Participants will seek
-relationship changes to reduce this type of stress. We call such range
+relationship changes to resolve this type of stress. We call such range
 of relations {\bf tolerance}, with which we interpret structural
 balance at a finer level.
 
 Given a network of nodes $G=(V,E)$, there exists a tolerance for each
 pair $(A,B)$ of nodes of the form $\tuple{e_1}{e_2}$ which is
 constrained by the triads $(A,B)$ is part of. When there is no
-constraint, i.e. stress, on a specific relationship $(A,B)$, the
-tolerance includes any relationship in $E$. We propose two fundamental
-principles regarding tolerance: transitivity and heterophily.
+constraint, i.e. stress, on a specific relationship, the tolerance
+includes any relationship in $E$. We propose two principles regarding
+tolerance: transitivity and heterophily.
 
 \begin{principle}[Transitivity of positive relationships]
 Let individuals $A$, $B$, $C$ in a network form a traid, and $(A,B)$,
@@ -176,7 +173,7 @@ other's close friend's enemy, are not likely to be friends.
   $+$ & $+$ & $\tuple{+}{O}$ & Transitivity \\
   $+$ & $-$ & $\tuple{O}{-}$ & Heterophily \\ 
   $-$ & $-$ & $\tuple{+}{-}$ & No stress \\ 
- \end{tabular}\\\vspace{4mm}
+ \end{tabular}\\  \vspace{1mm}
 \caption{\label{ref:classic_balance}Tolerance rules in structural balance theory}
 \end{center}
 \end{table}
@@ -194,11 +191,11 @@ Given a network $G$ of relationships, $G$ is said to be balanced if
 for all triads in the network are balanced.
 \end{definition}
 
-The tolerance rules for the Cartwright-Harary's balance theory are
+The tolerance rules for the Davis's balance theory are
 given in Table~\ref{ref:classic_balance}. Notice that neutral
 relations ``$O$" are also added. This is because triangles ``$+, +,
 O$" and ``$+, -, O$" are allowed implicitly in their theory in the
-case of incomplete graphs. According to the table, triads (1), (2) and
+general case of incomplete graphs. According to the table, triads (1), (2) and
 (3) from Figure~\ref{fig:balance_strong} are balanced as each relation
 strength is within the tolerance, but triad (4) is not
 balanced. Hence, our theory generalizes WSBT in the
@@ -233,9 +230,8 @@ Weakly positive (w+) & aquiantance \\
 Neutral (O) & unbiased relation, no relation  \\
 Weakly negative (w-) & minor disagreement, negative bias  \\
 Strongly negative (s-) & hatred, distrust  
-\end{tabular}\\\vspace{4mm}
-\caption{\label{ref:rel_types} Five types of relations in the order of
-  strength, i.e. $s+\preceq w+\preceq O\preceq w- \preceq s-$.}
+\end{tabular}\\\vspace{1mm}
+\caption{\label{ref:rel_types} Strength of relations: $s+\preceq w+\preceq O\preceq w- \preceq s-$.}
 \end{center}
 \end{table}
 
@@ -290,25 +286,24 @@ $w-$ & $w-$ & $\tuple{s+}{s-}$ \\
 $w-$ & $s-$ & $\tuple{s+}{s-}$ \\ 
 $s-$ & $s-$ & $\tuple{s+}{s-}$ \\
 \end{tabular}
-\end{tabular} \\\vspace{4mm} 
-\caption{\label{tab:weak_strong_tolerance} Tolerance rules with strong, weak and neutral relations}
+\end{tabular} \\\vspace{1mm} 
+\caption{\label{tab:weak_strong_tolerance} Tolerance of strong, weak \& neutral relations}
 \end{table}
 
 Given these relationship types, we now describe the tolerance for
 different triads in Table~\ref{tab:weak_strong_tolerance} and the
 resulting imbalanced triads or structures in
-Table~\ref{tab:imbalanced_extended}. Notice that the triangles with
+Table~\ref{tab:imbalanced_extended}. Notice that the triads with
 two positive relations and one negative relation are imbalanced as
 they are in classic balance theory, except for the cases in which all
-three relations as weak. In fact, the types of triangles that consist
+three relations as weak. In fact, the types of triads that consist
 of weak relations and neutral relations only are not considered to be
 imbalanced structures. The argument here is that when all relations
 are weak or neutral, the influence inside the triad is not significant
-enough to draw tension. Also, triangles of type ``$s+$ $s+$ O" and
+enough to draw tension. Also, triads of type ``$s+$ $s+$ O" and
 ``$s+$ $s-$ O" are considered to be imbalanced structures. The
 arguments against each type of imbalanced structure is listed in
 Table~\ref{tab:imbalanced_extended}.
-
 
 \begin{table}[htbp!]
 \begin{center}
@@ -324,7 +319,7 @@ $(s+ s- O)$: my enemy's close friend does not pick a side\\
   in the presence of strong and weak ties.} 
 \end{center}
 \end{table}
-\vspace*{-0.2in}
+\vspace*{0in}
 
 \subsection{Relation Distance and General Expression of Balance}
 The concept of extended balance is meaningful only if the tolerance
@@ -335,15 +330,17 @@ is considerably more complex in the general case when the strengths
 of relations are drawn from arbitrary numerical values. 
 
 To handle such cases, we refine the measurement of relations with
-strengths from a total ordering to positive real values. In particular,
-we define function $\psi: E \rightarrow R^{+}$ such that, for two
-relations $e_{1}, e_{2} \in E$, $\psi(e_{1}) \leq \psi(e_{2})$ if and
-only if $e_{1} \preceq e_{2}$.  Since positive values can be seen as
-metric distances, we call $\psi(e)$ the relation distance of $e$.  In
-other words, relations with varying strengths are represented by
-distances with different lengths.  More negative strengths are
+strengths from a total ordering to positive real values. In
+particular, we define function $\psi: E \rightarrow R^{+}$ such that,
+for two relations $e_{1}, e_{2} \in E$, $\psi(e_{1}) \leq \psi(e_{2})$
+if and only if $e_{1} \preceq e_{2}$.  Since positive values can be
+seen as metric distances, we call $\psi(e)$ the relation distance of
+$e$.  In other words, relations with varying strengths are represented
+by distances with different lengths.  More negative strengths are
 represented by larger distances and more positive strengths are
-represented by smaller distances.
+represented by smaller distances. We propose the following general
+rule of tolerance with the concept of relation distance.
+
 
 %% In the case of WSBT, Table 1 set up
 %% such tolerance rules. In the extended case when strong/weak ties are
@@ -363,17 +360,14 @@ represented by smaller distances.
 %% comparing operator $<$.  In particular, $\psi(e_{1}) < \psi(e_{2})$ if
 %% and only if $e_{1} \preceq e_{2}$.
 
-We propose the following general rule of tolerance with the
-concept of relation distance.
 
 \begin{definition} \label{def:gen_tolerance}
 Given adjacent relations $(A,B)$ and $(B,C)$, the tolerance of $(A,C)$
-is given by $[|\psi(A,B)-\psi(B,C)|, \psi(A,B)+\psi(B,C)]$. 
+is given by $[|\psi(A,B)-\psi(B,C)|, \psi(A,B)+\psi(B,C)]$.
 \end{definition}
 
 It can be easily checked that the general tolerance rule agrees with
-Principle 1 and 2 by substituting $\leq$ for $\preceq$.  Given the
-mapping from strengths to the distances, we have the following
+Principle 1 and 2 by substituting $\leq$ for $\preceq$.  Immediately, we have the following
 theorem.
 \begin{theorem} 
 Given a triad $(A,B,C)$, if $\psi(A,B)$, $\psi(B,C)$, $\psi(A,C)$
@@ -381,7 +375,7 @@ satisfies the metric triangle inequality, then $(A,B,C)$ is balanced.
 \end{theorem}
 
 To illustrate how the distances can be used to represent a given set
-of strength values, we revisit WSBT. We consider two thresholds:
+of strength values, we revisit WSBT. Consider two thresholds:
 $b_{+} < b_{-}$ such that if $\psi(e)\geq b_{-}$ then the relationship
 $e$ is negative. Similarly, if $\psi(e)\leq b_{+}$, then $e$ is
 a positive relationship. For any value $b_{+} < \psi(e) < b_{-}$, the
@@ -392,10 +386,10 @@ Definition~\ref{def:gen_tolerance}.
 \begin{figure}[th]
 \centering
 \includegraphics[height=0.55in]{Figs/mapping2.pdf}
-\caption{\label{fig:partition} Partitioning of distance domain by boundary
-  parameters $\{b_{s+}, b_{w+}, b_{w-}, b_{s-}\}$: distances within $(0,b_{s+}]$ are strong positive; $(b_{s+}, b_{w+})$ weak
-  positive, $[b_{w+}, b_{w-}]$ neutral, $(b_{w-}, b_{s-})$
-  weak negative, and $ [b_{s-}, \infty)$ strong negative.}
+\vspace*{-0.1in}
+\caption{\label{fig:partition} Partitioning of distances:
+  $(0,b_{s+}]:s+$, $(b_{s+}, b_{w+}): w-$, $[b_{w+}, b_{w-}]:O$,
+$(b_{w-}, b_{s-}):w-$, and $ [b_{s-}, \infty):w+$.}
 
 \end{figure}
 
@@ -409,7 +403,7 @@ $b_{w+}  > 2b_{s+}$ & $b_{s-}  > b_{w-} + b_{s+}$  \\
 $b_{s-}  > 2b_{w+}$ & $b_{w-}  > b_{w+}+b_{s+}$
 \end{tabular} 
 
-\noindent then the tolerance given in
+\noindent the tolerance given in
 Table~\ref{tab:weak_strong_tolerance} are equivalent to
 Definition~\ref{def:gen_tolerance}, and all triads shown in
 Table~\ref{tab:imbalanced_extended} are imbalanced according to metric triangle

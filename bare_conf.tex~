@@ -14,7 +14,7 @@
 %% http://www.michaelshell.org/tex/ieeetran/
 %% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
 %% and
-%% http://www.ieee.org/
+%% http://www.i eee.org/
 
 %%*************************************************************************
 %% Legal Notice:
@@ -381,15 +381,22 @@ Email: qiany3@rpi.edu}
 \IEEEauthorblockA{Department of Computer Science\\
 Rensselaer Polytechnic Institute\\
 %110 8th Street, Troy, NY 12180\\
-Email: adalis@rpi.edu}
-\thanks{Research was sponsored by the Army Research Laboratory and was
-accomplished under Cooperative Agreement Number W911NF-09-2-0053. The
-views and conclusions contained in this document are those of the
-authors and should not be interpreted as representing the official
-policies, either expressed or implied, of the Army Research Laboratory
-or the U.S. Government. The U.S. Government is authorized to reproduce
-and distribute reprints for Government purposes notwithstanding any
-copyright notation here on. We also would like to thank T. DuBois for sharing the implementation
+Email: adalis@rpi.edu} \thanks{ This research is supported through the
+  authors' participation in the Network Science Collaborative
+  Technology Alliance (NS-CTA) sponsored by the U.S.~Army Research
+  Laboratory under Agreement Number W911NF-09-2-0053.  The content of
+  this paper does not necessarily reflect the position or policy of
+  the U.S.~Government, no official endorsement should be inferred or
+  implied.
+%% Research was sponsored by the Army Research Laboratory and was
+%% accomplished under Cooperative Agreement Number W911NF-09-2-0053. The
+%% views and conclusions contained in this document are those of the
+%% authors and should not be interpreted as representing the official
+%% policies, either expressed or implied, of the Army Research Laboratory
+%% or the U.S. Government. The U.S. Government is authorized to reproduce
+%% and distribute reprints for Government purposes notwithstanding any
+%% copyright notation here on.
+We also would like to thank T. DuBois for sharing the implementation
 details of his algorithm.
 }}
 
@@ -433,14 +440,13 @@ details of his algorithm.
 Modeling trust in very large social networks is a hard problem due to
 the highly noisy nature of these networks that span trust
 relationships from many different contexts, based on judgments of
-reliability, dependability and competence. Furthermore, trust
-relationships vary in their level of strength as participants may or
-may not know each other well. In this paper, we introduce a new
-extended balance theory as a foundational theory of trust in
-networks. Our theory preserves the distinctions between trust and
-distrust as suggested in the literature, but also incorporates the
-notion of relationship strength which can be expressed as either
-discrete categorical values, as pairwise comparisons or as metric
+reliability, dependability and competence and the relationships vary
+in their level of strength. In this paper, we introduce a new extended
+balance theory as a foundational theory of trust in networks. Our
+theory preserves the distinctions between trust and distrust as
+suggested in the literature, but also incorporates the notion of
+relationship strength which can be expressed as either discrete
+categorical values, as pairwise comparisons or as metric
 distances. Our model is novel, has sound social and psychological
 basis, and captures the classical balance theory as a special case. We
 then propose a convergence model, describing how an imbalanced network
@@ -496,25 +502,25 @@ balance as a touchstone to see the congruence between their practical
 results and the long studied theory. In essence, the transitivity of
 trust and distrust within a triad can be easily inferred from the
 balance theory. Other algorithms~\cite{golbeck:distrust2011} make use
-of similar assumptions without explicit mention of balance theory. In
-these algorithms, trust and distrust relationships are mapped to
-metric distances on a continuous range. While these algorithms show
-strong prediction performance, there is no underlying theory that
-explains how structural balance can be mapped to metric
-distances. That is, a theory that stands as the cornerstone of trust
-prediction is missing. Without such a theory, it is not possible to
-develop principled algorithms and study to which degree a specific
-network conforms to the theory, and to illustrate the importance of
-various balance related properties of networks. Furthermore, in
-today's networks in which individuals interact with a large number of
-others, one expects that the relationships and their trust level will
-vary considerably. As a result, it is not clear how
-Cartwright-Harary's balance theory~\cite{Cartwright:56} can be applied
-to large scale social networks in which nodes may have different types
-of trust and distrust relationships, ranging from strong to weak.
-In this paper, we address all these concerns and make the following
-unique contributions:
+of similar assumptions without explicit mention of balance theory in
+which trust and distrust relationships are mapped to metric distances
+on a continuous range. While these algorithms show strong prediction
+performance, there is no underlying theory that explains how
+structural balance can be mapped to metric distances. That is, a
+theory that stands as the cornerstone of trust prediction is
+missing. Without such a theory, it is not possible to develop
+principled algorithms and study to which degree a specific network
+conforms to the theory, and to illustrate the importance of various
+balance related properties of networks. Furthermore, in today's
+networks in which individuals interact with a large number of others,
+one expects that the relationships and their trust level will vary
+considerably. As a result, it is not clear how Cartwright-Harary's
+balance theory~\cite{Cartwright:56} can be applied to large scale
+social networks in which nodes may have different types of trust and
+distrust relationships, ranging from strong to weak.
 
+In this paper, we address all these concerns and make the following
+unique contributions.
 First, we first introduce a new extended balance theory that allows
 arbitrary relationship strengths. We express balance with two simple
 principles that preserve the meanings of trust and distrust: positive
@@ -524,7 +530,6 @@ categorical values, pairwise comparisons or metric distances
 using the same principles. Our novel method has sound social
 and psychological basis, and captures the classical balance theory as a
 special case.
-
 Next, we propose a convergence model, describing how an imbalanced
 network evolves towards new balance. The assumption behind our model
 is that in resolving tensions within imbalanced relationships, people
@@ -532,14 +537,12 @@ tend to avoid the effort of changing relationships if possible. The
 introduction of extended balance theory allows us to formulate the
 convergence problem of a social network as a Metric Multidimensional
 Scaling (MDS) optimization problem.
-
 Finally, we show how the convergence model can be used to predict edge
 signs in social networks, and justify our theory through experiments
 on real datasets. Stress majorization is applied to solve
 MDS~\cite{Gansner:05}, and our method consistently matches and
 outperforms the state of the art. In addition, we show promising
-results towards providing solutions for the harder edge prediction
-problem.
+results towards providing solutions for the harder {\it link prediction problem}~\cite{Kleinberg:03}.
 
 
 \input{structural_balance}
@@ -565,11 +568,10 @@ the constraints provided by the other nodes. However, in contrast with
 previous work, our method is aware of global constraints based on
 balance which results in better results overall. Furthermore, the
 solutions provided by our method can also be used to solve the harder
-edge prediction problem.
+{\it link prediction problem}.
 
-We are investigating various avenues of future work. Inspired by the
-work in~\cite{Khoury:12}, we have developed an approximation algorithm
-of stress majorization in the context of social networks.
+We are investigating various avenues of future work. An approximation algorithm
+of stress majorization has been developed in the context of social networks.
 Furthermore, we are currently testing how the inclusion of relation
 strength improves performance by considering other actions of the
 users that imply the existence of a social tie. Our method also has

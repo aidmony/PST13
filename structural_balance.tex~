@@ -29,7 +29,8 @@ of the one-sided relationships to future work.
 
 \begin{figure}[th]
 \centering
-\includegraphics[height=1in]{Figs/strongBalance_ver.pdf}
+\includegraphics[height=0.8in]{Figs/strongBalance_ver.pdf}
+\vspace*{-0.1in}
 \caption{\label{fig:balance_strong} Classic structural balance with four different types of triads}
 \end{figure}
 
@@ -41,13 +42,13 @@ relationships between three people.  It is natural for three people to
 be friends: Alice (A) is friends with Bob (B), Bob is friends with
 Chris (C) and Chris is friends with Alice. This triangle (marked (1)
 in Figure~\ref{fig:balance_strong}) is considered completely
-positive. Similarly, a relation where two friends, Alice and Bob have
-a common enemy Chris, is also natural (triangle (2) in
+positive. Similarly, a relation where two friends, Bob and Chris have
+a common enemy Alice, is also natural (triangle (2) in
 Figure~\ref{fig:balance_strong}). It is considered that in such
 natural relationships, there is no tension in the
-interactions. However, it is less natural for Alice and Bob, and Bob
-and Chris to be friends, but Alice and Chris to be enemies (triangle
-(4) in Figure~\ref{fig:balance_strong}). This situation is likely to
+interactions. However, it is less natural for Alice and Bob, and Alice
+and Chris to be friends, but Bob and Chris to be enemies (triangle (4)
+in Figure~\ref{fig:balance_strong}). This situation is likely to
 generate tension as now Alice must avoid spending time with Bob when
 Chris is around. As a result, all definitions of structural balance
 would consider triangles 1 and 2 as balanced, and 4 as imbalanced.
@@ -55,11 +56,11 @@ would consider triangles 1 and 2 as balanced, and 4 as imbalanced.
 The last type of relationship is one containing all negative
 edges. This type of relationship can be considered balanced as there
 is no specific conflict when three people all dislike each other but
-spend no time together. As a result, in weak structural balance theory
-(WSBT), triangle (3) is considered balanced.  However, there is an
+spend no time together. As a result, in Davis's weak structural balance theory
+(WSBT), triangle (3) is considered balanced~\cite{kleinberg-book}\cite{Davis:67}.  However, there is an
 opportunity for one of the pairs in this triangle to become friends,
 and team up against the common enemy. For this reason, (strong) SBT,
-considers triangle (3) unbalanced as well.
+considers triangle (3) unbalanced as well~\cite{Cartwright:56}\cite{kleinberg-book}.
 
 A complete network in which all pairs of people are connected to each
 other satisfies the WSBT if all triangles in it are balanced with
@@ -83,33 +84,30 @@ concepts of direct propagation, co-citation and backwards propagation,
 and compute trust propagation by repeating matrix operations that
 combine the three types of propagations. They report an overall $85\%$
 prediction accuracy over data samples from Epinion that has equal
-number of positive and negative edges.
-
-Leskovec, Huttenlocher and Kleinberg~\cite{Leskovec:2010} conduct a
-series of experiments on three large datasets: Epinion, Slashdot and
-Wikipedia. In particular, they collect two classes of features, one of
-which is based on degree and the other is based on triads. These
-relatively local features form a high dimensional space on which they
-perform standard machine learning methods and perform edge sign
-predictions. Similar to our work, they interpret some of their results
-in terms of the classical balance theory~\cite{Cartwright:56}, but
-unlike our work, they do not use balance theory as a starting point of
-their approach.
+number of positive and negative edges.  Leskovec, Huttenlocher and
+Kleinberg~\cite{Leskovec:2010} conduct a series of experiments on
+three large datasets: Epinions, Slashdot and Wikipedia. In particular,
+they collect two classes of features, one of which is based on degree
+and the other is based on triads. These relatively local features form
+a high dimensional space on which they perform standard machine
+learning methods and perform edge sign predictions. Similar to our
+work, they interpret some of their results in terms of the classical
+balance theory~\cite{Cartwright:56}, but unlike our work, they do not
+use balance theory as a starting point.
 
 The recent work by DuBois et. al.~\cite{golbeck:distrust2011} is also
 related to our paper from an algorithmic point of view. This work
 stands out as it provides very good prediction performance for the
 edge sign prediction problem; $80-90 \%$ on all of the three datasets
-used in~\cite{Leskovec:2010} for both positive and negative edges. In
-this work, the authors map trust and distrust relationships to metric
-distances: the larger the distance is, the more negative (less
-positive) the relation is. Then, the edge sign prediction problem is
-mapped to a graph drawing problem. The proposed method computes two
-features for each signed edge: the first one is based on path
+used in~\cite{Leskovec:2010} for both positive and negative edges. In this work, two
+features are computed for each signed edge: the first one is based on path
 probability (PP, $O(n^2)$)~\cite{DuBois:2009} and the second one uses
 a force directed algorithm (FD, $O(kn)$ at each iteration where $k$ is
 the average degree of the network)~\cite{golbeck:distrust2011}. In
-this paper, we show that some of the assumptions underlying this
+the method of FD, the authors map trust and distrust relationships to metric
+distances: the larger the distance is, the more negative (less
+positive) the relation is. Then, the edge sign prediction problem is
+mapped to a graph drawing problem. In this paper, we show that some of the assumptions underlying this
 algorithm can be formally defined as part of a general structural
 balance theory that not only works for simple positive and negative
 edges, but also takes into account trust strength when
@@ -147,7 +145,7 @@ method maps unconnected nodes to a predominantly positive range. This
 presents a problem for using this algorithm for solving the
 {\it link prediction problem}~\cite{Kleinberg:03}. Link prediction is
 a harder problem since networks are often sparse and one needs to find
-the few edges that are true positive or negative links with high
+the few edges that are true positive with high
 probability. We show that our results are very promising on this
 front.
 
@@ -159,7 +157,7 @@ balance theory is valid for many large networks in which some or most
 relationships are simple acquaintances~\cite{Granovetter:1973} instead
 close friendship relationships. An acquaintance may not result in the
 same type of structural constraints. For example, if Alice knows Bob,
-and Bob knows Chris, but Charlie dislikes Alice, this may not cause
+and Bob knows Chris, but Chris dislikes Alice, this may not cause
 much stress in the existing relationships if Alice, Bob and Chris
 rarely spend time with each other, i.e. their relationship is not
 strong. However, there are still some implications for the network

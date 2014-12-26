@@ -2,7 +2,7 @@
 
 \section{Convergence Model} \label{sec:mathmodel}
 Researchers have long argued that every social network has a tendency
-towards balanced states~\cite{Doreian:02}.  The next question of
+towards a balanced state~\cite{Doreian:02}.  The next question of
 interest is if an imbalance rises, in what way will a social network
 change towards a new balance.  It is noted in social psychology
 literature that people are reluctant to make changes in relations as
@@ -65,17 +65,18 @@ minimized:
 \[\sigma(X)= \min_{X} \sum_{i<j \leq n}w_{\psi(i,j)}*(d_{i,j}(X)-\psi{(i,j)})^2\]
 \end{definition}
 
-The optimization of relation cost is in fact a Metric
-Multidimensional Scaling problem (MDS) by assigning nodes a location
-in metric space. The total cost function is called stress in MDS, and
-is often minimized through an optimization strategy called {\it stress
-  majorization} \cite {Gansner:05}. Stress majorization is an iterative
-method that guarantees monotonically decreasing stress in each
-iteration, and returns a locally minimum solution.  It is recognized
-as a principled technique in the field of graph drawing. The
-algorithm, however, requires $O(n^3)$ time and $O(n^{2})$ space. Due
-to its complexity, stress majorization is applicable on graphs with
-limited size. We are in the process of developing an approximation
+The optimization of relation cost is in fact a Metric Multidimensional
+Scaling problem (MDS) by assigning nodes a location in metric
+space. The total cost function is called stress in MDS, and is often
+minimized through an optimization strategy called {\it stress
+  majorization} \cite {Gansner:05}. Stress majorization is an
+iterative method that guarantees monotonically decreasing stress in
+each iteration, and returns a locally minimum solution.  It is
+recognized as a principled technique in the field of graph
+drawing. The algorithm, however, requires $O(n^3)$ time and $O(n^{2})$
+space. Due to its complexity, stress majorization is applicable on
+graphs with limited size when missing edges are explicitly represented
+as neutral ties. We are in the process of developing an approximation
 method for this problem as a result. In this paper, however, we will
 investigate the performance of the exact solution to stress
 majorization.
